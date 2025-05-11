@@ -1,1 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ernesto Jr | Portfolio</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
+  <style>
+    :root {
+      --primary: #00bfff;
+      --text: #ffffff;
+      --bg: #0a0a0a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--text);
+      background: linear-gradient(135deg, #0a0a0a, #111);
+      min-height: 100dvh;
+      padding-top: 80px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #081b29;
+      z-index: 1000;
+    }
+
+    .logo {
+      color: var(--primary);
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: opacity 1s ease-in-out;
+      opacity: 1;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 30px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: var(--primary);
+    }
+
+    .home-content h1, .home-content h3, .home-content p {
+      text-align: center;
+      color: var(--text);
+    }
+
+    /* Typing animation */
+    .typing-effect {
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: bold;
+      color: var(--text);
+      border-right: 3px solid var(--primary); /* Cursor effect */
+      padding-right: 10px;
+      animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
+    }
+
+    /* Typing animation steps */
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    /* Blinking cursor animation */
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    .home-content h1 {
+      font-size: 3rem;
+    }
+
+    .home-content h3 {
+      font-size: 2rem;
+      margin-top: 10px;
+    }
+
+    .home-content p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .btn-box {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn-box a {
+      background: var(--primary);
+      color: white;
+      padding: 12px 30px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-box a:hover {
+      background: #009acd;
+    }
+
+    .mission, .vision {
+      background: #1a1a1a;
+      margin: 40px auto;
+      padding: 40px;
+      max-width: 1000px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 191, 255, 0.1);
+    }
+
+    .mission h2, .vision h2 {
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .mission p, .vision p {
+      text-align: center;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    /* Change Frontend Developer Text Color to Mission Color */
+    .home-content h3 {
+      color: var(--primary); /* This sets the same color as the Mission section */
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar {
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .home-content h1 {
+        font-size: 2rem;
+      }
+    }
+
+  @media (hover: none) and (pointer: coarse) {
+    .custom-cursor {
+      display: none;
+    }
+  }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo" id="animatedLogo">Code the future.</a>
+    <nav class="navbar">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="home">
+    <div class="home-content">
+      <h1><span class="typing-effect">Hi, I'm Ernesto Jr</span></h1>
+      <h3>Frontend Developer</h3>
+      <p>I design and build beautiful, responsive web experiences with a focus on clean design, performance, and usability.</p>
+      <div class="btn-box">
+        <a href="contact.html">Hire Me</a>
+        <a href="portfolio.html">View Work</a>
+      </div>
+    </div>
+
+    <div class="home-sci">
+      <a href="#"><i class='bx bxl-facebook'></i></a>
+      <a href="#"><i class='bx bxl-linkedin'></i></a>
+      <a href="#"><i class='bx bxl-twitter'></i></a>
+    </div>
+
+    <span class="home-imgHover"></span>
+  </section>
+
+  <section class="mission">
+    <h2>Mission</h2>
+    <p>Our mission is to empower businesses and individuals by delivering exceptional and high-performance web experiences that drive engagement and growth.</p>
+  </section>
+
+  <section class="vision">
+    <h2>Vision</h2>
+    <p>We envision a world where the digital landscape is seamless, efficient, and beautiful, enabling users to navigate the web effortlessly and with delight.</p>
+  </section>
+
+  <script>
+    const logo = document.getElementById('animatedLogo');
+    const texts = ["Code the future.", "Innovate.", "Integrate.", "Inspire."];
+    let index = 0;
+
+    function updateLogoText() {
+      logo.style.opacity = 0; // start fade out
+      setTimeout(() => {
+        index = (index + 1) % texts.length;
+        logo.textContent = texts[index];
+        logo.style.opacity = 1; // fade in
+      }, 1000); // wait for fade-out to finish
+    }
+
+    setInterval(updateLogoText, 4000); // change every 4 seconds
+  </script>
+
+  <div class="custom-cursor"></div>
+  <script>
+    if (!('ontouchstart' in window)) {
+  const cursor = document.querySelector('.custom-cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.top = `${e.clientY}px`;
+    cursor.style.left = `${e.clientX}px`;
+  });
+  document.addEventListener('mousedown', () => cursor.classList.add('active'));
+  document.addEventListener('mouseup', () => cursor.classList.remove('active'));
+}
+  </script>
+
+</body>
+</html>

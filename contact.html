@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Ernesto Jr</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --primary: #00bfff;
+      --text: #ffffff;
+      --bg: #0a0a0a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--text);
+      background: linear-gradient(135deg, #0a0a0a, #111);
+      min-height: 100dvh;
+      padding-top: 80px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #081b29;
+      z-index: 1000;
+    }
+
+    .logo {
+      color: var(--primary);
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: opacity 1s ease-in-out;
+      opacity: 1;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 30px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: var(--primary);
+    }
+
+    h1 {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--primary);
+    }
+
+    .contact-section {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #1a1a1a;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 191, 255, 0.1);
+    }
+
+    .contact-section h2 {
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .contact-section form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-section input,
+    .contact-section textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #2a2a2a;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .contact-section button {
+      padding: 12px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-section button:hover {
+      background: #009acd;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar {
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .custom-cursor {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--primary);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease;
+      z-index: 9999;
+    }
+
+    .custom-cursor.active {
+      transform: translate(-50%, -50%) scale(1.5);
+      background-color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo" id="animatedLogo">Code the future.</a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <script>
+    const logo = document.getElementById('animatedLogo');
+    const texts = ["Code the future.", "Innovate.", "Integrate.", "Inspire."];
+    let index = 0;
+
+    function updateLogoText() {
+      logo.style.opacity = 0;
+      setTimeout(() => {
+        index = (index + 1) % texts.length;
+        logo.textContent = texts[index];
+        logo.style.opacity = 1;
+      }, 1000);
+    }
+
+    setInterval(updateLogoText, 4000);
+  </script>
+
+  <h1>Contact Me</h1>
+
+  <div class="contact-section">
+    <h2>Send a Message</h2>
+    <form action="#" method="post">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <div class="custom-cursor"></div>
+  <script>
+    if (!('ontouchstart' in window)) {
+  const cursor = document.querySelector('.custom-cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.top = `${e.clientY}px`;
+    cursor.style.left = `${e.clientX}px`;
+  });
+  document.addEventListener('mousedown', () => cursor.classList.add('active'));
+  document.addEventListener('mouseup', () => cursor.classList.remove('active'));
+}
+  </script>
+
+</body>
+</html>
